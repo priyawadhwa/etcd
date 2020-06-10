@@ -534,3 +534,7 @@ pull-docker-functional:
 	$(info GO_VERSION: $(GO_VERSION))
 	$(info ETCD_VERSION: $(ETCD_VERSION))
 	docker pull gcr.io/etcd-development/etcd-functional:go$(GO_VERSION)
+
+.PHONY: minikube-etcd
+minikube-etcd: build
+	./dockerfiles/etcd.sh
